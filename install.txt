@@ -1,0 +1,12 @@
+$ git clone https://github.com/elizamarysouza/cursophp-sp.git
+$ cd cursophp-sp/
+$ git add *
+$ git commit -am "aula-git"
+$ git push origin master
+
+# volte ao navegador e atualize a página
+# copiar o hash do ultimo commit: latest-commit do navegador
+
+$ git tag nome-tag latest-commit
+
+$ git push origin nome-tag
