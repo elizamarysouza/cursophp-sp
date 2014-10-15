@@ -1,16 +1,35 @@
-<?php include("cabecalho.php"); ?>
+<?php 
+   include("cabecalho.php");
+   include("conexao.php");
+ ?>
 
-				<h1>Formulário de Cadastro</h1>
-				<form action="adiciona-produto.php">
-					<label>
-							Nome:
-							<input type="text" name="nome">
-					</label>
-				  <label>
-							Preço:
-							<input type="text" name="preco">
-					 </label>
-							<input type="submit" value="Cadastrar">
-				</form>
+				<?php					
+					//$conexao = mysqli_connect("localhost","root","","loja");
+				
+					$nomeProduto = $_GET["nome"];
+					$precoProduto = $_GET["preco"];
+
+          $res = cadastraProduto($nomeProduto,$precoProduto,$conexao);
+
+				if($res){
+
+				?>
+				<p class="alert-success">
+				Produto <?= $nomeProduto ?> com o valor de R$ <?= $precoProduto ?> 
+        adicionado com sucesso!</p>
+
+        <?php
+          }else{
+				    
+				?>
+
+          <p class="alert-danger">
+				Produto <?= $nomeProduto ?> com o valor de R$ <?= $precoProduto ?> 
+        não foi possível adicionar o produto!
+				ERRO:<?= mysqli_error($conexao)?></p>
+
+				<?php
+          }
+				?>
 
 <?php include("rodape.php"); ?>
