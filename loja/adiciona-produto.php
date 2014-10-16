@@ -7,10 +7,11 @@
 				<?php					
 					//$conexao = mysqli_connect("localhost","root","","loja");
 				
-					$nomeProduto = $_GET["nome"];
-					$precoProduto = $_GET["preco"];
+					$nomeProduto = $_POST["nome"];
+					$precoProduto = $_POST["preco"];
+					$descricaoProduto = $_POST["descricao"];
 
-          $res = cadastraProduto($nomeProduto,$precoProduto,$conexao);
+          $res = cadastraProduto($nomeProduto,$precoProduto,$descricaoProduto,$conexao);
 
 				if($res){
 

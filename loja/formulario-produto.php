@@ -5,7 +5,7 @@
 		   <h1>Formulário de Cadastro</h1>
 		</div>
 		
-     <form class="panel-footer" action="adiciona-produto.php">
+     <form class="panel-footer" action="adiciona-produto.php" method="post">
 					<label>
 							Nome:
 							<input class="form-control" type="text" name="nome">
@@ -13,6 +13,10 @@
 				  <label>
 							Preço:
 							<input class="form-control" type="text" name="preco">
+					 </label>
+					 <label>
+							Descrição:
+							<input class="form-control" type="text" name="descricao">
 					 </label>
 							<input class="btn btn-primary" type="submit" value="Cadastrar">
 		  </form>
