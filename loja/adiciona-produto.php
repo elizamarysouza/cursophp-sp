@@ -10,8 +10,16 @@
 					$nomeProduto = $_POST["nome"];
 					$precoProduto = $_POST["preco"];
 					$descricaoProduto = $_POST["descricao"];
+          $categoriaProduto = $_POST["categoria"];
+					$usado= 'false';
 
-          $res = cadastraProduto($nomeProduto,$precoProduto,$descricaoProduto,$conexao);
+					if(array_key_exists('usado',$_POST)){
+ 						 print "ENTREI AQUI:".$_POST["usado"];
+						$usado= 'true';
+             print "AGORA:".$_POST["usado"];            
+					}
+
+          $res = cadastraProduto($nomeProduto,$precoProduto,$descricaoProduto,$categoriaProduto,$usado,$conexao);
 
 				if($res){
 
